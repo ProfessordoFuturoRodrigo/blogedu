@@ -1,0 +1,21 @@
+<form id="formLogin">
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="senha" placeholder="Senha" required>
+    <button type="submit">Entrar</button>
+</form>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+<script src="js/firebase.js"></script>
+<script src="js/auth.js"></script>
+
+<script>
+document.getElementById("formLogin").addEventListener("submit", (e) => {
+    e.preventDefault();
+    login(
+        document.getElementById("email").value,
+        document.getElementById("senha").value
+    );
+});
+</script>
