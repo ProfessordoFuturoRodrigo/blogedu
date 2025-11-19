@@ -1,38 +1,26 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscrição - Blog Educação</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<h2>Crie sua conta</h2>
 
-<header>
-    <h1>Inscreva-se</h1>
-    <nav>
-        <a href="index.html">Início</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="inscricao.html">Inscrição</a>
-    </nav>
-</header>
+<form id="formCadastro">
+    <input type="text" id="nome" placeholder="Nome" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="senha" placeholder="Senha" required>
+    <button type="submit">Cadastrar</button>
+</form>
 
-<main class="form-container">
-    <h2>Receba conteúdos exclusivos!</h2>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
-    <form id="formInscricao">
-        <label>Nome:</label>
-        <input type="text" name="nome" required>
+<script src="js/firebase.js"></script>
+<script src="js/auth.js"></script>
 
-        <label>Email:</label>
-        <input type="email" name="email" required>
-
-        <button type="submit">Enviar Inscrição</button>
-    </form>
-
-    <p id="mensagem"></p>
-</main>
-
-<script src="js/script.js"></script>
-</body>
-</html>
+<script>
+document.getElementById("formCadastro").addEventListener("submit", (e) => {
+    e.preventDefault();
+    registrarUsuario(
+        document.getElementById("nome").value,
+        document.getElementById("email").value,
+        document.getElementById("senha").value
+    );
+});
+</script>
