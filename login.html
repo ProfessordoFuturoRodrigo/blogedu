@@ -1,9 +1,31 @@
-<form id="formLogin">
-    <input type="email" id="email" placeholder="Email" required>
-    <input type="password" id="senha" placeholder="Senha" required>
-    <button type="submit">Entrar</button>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<header>
+    <h1>Entrar</h1>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+    </nav>
+</header>
+
+<div class="container">
+    <form id="formLogin">
+        <h2>Acesse sua conta</h2>
+
+        <input type="email" id="email" placeholder="Seu email" required>
+        <input type="password" id="senha" placeholder="Sua senha" required>
+
+        <button type="submit">Entrar</button>
+    </form>
+</div>
+
+<!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
@@ -13,9 +35,10 @@
 <script>
 document.getElementById("formLogin").addEventListener("submit", (e) => {
     e.preventDefault();
-    login(
-        document.getElementById("email").value,
-        document.getElementById("senha").value
-    );
+
+    login(email.value, senha.value);
 });
 </script>
+
+</body>
+</html>
