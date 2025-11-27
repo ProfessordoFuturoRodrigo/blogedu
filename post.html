@@ -1,49 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Artigo</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/darkmode.js"></script>
 </head>
 <body>
 
 <header>
-    <h1>O Futuro da Educação</h1>
-    <nav>
-        <a href="index.html">Início</a>
-        <a href="sobre.html">Sobre</a>
-        <button onclick="logout()" style="background:none;border:none;color:white;">Sair</button>
-    </nav>
+    <button onclick="history.back()">← Voltar</button>
 </header>
 
-<div class="container">
+<h1 id="titulo"></h1>
+<div id="conteudo"></div>
 
-    <p>
-        A educação está passando por uma transformação profunda...
-    </p>
+<p>👍 Likes: <span id="likes">0</span></p>
+<button onclick="darLike()">Curtir</button>
 
-    <h2>Comentários</h2>
-
-    <div id="avisoLogin" style="color:red;">
-        Para comentar, faça <a href="login.html">login</a> ou <a href="inscricao.html">cadastro</a>.
-    </div>
-
-    <div id="areaComentarios" style="display:none;">
-        <textarea id="comentario" placeholder="Escreva seu comentário"></textarea>
-        <button onclick="enviarComentario()">Enviar</button>
-    </div>
-
-    <div id="listaComentarios"></div>
-
-</div>
-
-<!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
 <script src="js/firebase.js"></script>
-<script src="js/auth.js"></script>
-<script src="js/comentarios.js"></script>
+<script src="js/posts.js"></script>
+
+<script>
+carregarPost();
+</script>
 
 </body>
 </html>
